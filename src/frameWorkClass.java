@@ -1,6 +1,6 @@
 
 import java.util.concurrent.TimeUnit;
-
+import utilities.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -16,13 +16,13 @@ public class frameWorkClass {
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
-		baseUrl = "https://testrtt.softwaydev.com/version_8/";
+		//baseUrl = "https://testrtt.softwaydev.com/version_8/";
 		
 		loginPage = new loginPageFactory(driver);
 		registerPage = new registerPageFactory1(driver);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(baseUrl);
+		driver.get(Constants.URL);
 		
 		
 	}
