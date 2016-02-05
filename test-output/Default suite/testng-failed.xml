@@ -6,4 +6,15 @@
       <class name="frameWorkClass"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="frameWorkClass">
+        <methods>
+          <include name="login"/>
+          <include name="T1"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- frameWorkClass -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

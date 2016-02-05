@@ -1,21 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="2" failed="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32809" started-at="2016-01-12T06:43:58Z" finished-at="2016-01-12T06:44:31Z">
+  <suite name="Default suite" duration-ms="2947572" started-at="2016-01-19T05:33:58Z" finished-at="2016-01-19T06:23:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32809" started-at="2016-01-12T06:43:58Z" finished-at="2016-01-12T06:44:31Z">
+    <test name="Default test" duration-ms="2947572" started-at="2016-01-19T05:33:58Z" finished-at="2016-01-19T06:23:06Z">
       <class name="frameWorkClass">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:frameWorkClass@75bd9247]" name="beforeClass" is-config="true" duration-ms="26808" started-at="2016-01-12T12:13:58Z" finished-at="2016-01-12T12:14:25Z">
+        <test-method status="FAIL" signature="beforeClass()[pri:0, instance:frameWorkClass@7d417077]" name="beforeClass" is-config="true" duration-ms="0" started-at="2016-01-19T11:03:58Z" finished-at="2016-01-19T11:03:58Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out waiting for page load.
+Command duration or timeout: 2730.96 seconds
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'SSL-16-0048', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 4b7480cd-014a-48bc-852c-5e5b03ab8c7e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Command duration or timeout: 2730.96 seconds
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'SSL-16-0048', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 4b7480cd-014a-48bc-852c-5e5b03ab8c7e
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:311)
+	at frameWorkClass.beforeClass(frameWorkClass.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: '2.48.2', revision: '41bccdd10cf2c0560f637404c2d96164b67d9d67', time: '2015-10-09 13:08:06'
+System info: host: 'SSL-16-0048', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+	at <anonymous class>.Utils.initWebLoadingListener/<(file:///C:/Users/Pratyush/AppData/Local/Temp/anonymous6223302453963115970webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9010)
+	at <anonymous class>.WebLoadingListener/e(file:///C:/Users/Pratyush/AppData/Local/Temp/anonymous6223302453963115970webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5114)
+	at <anonymous class>.WebLoadingListener/<(file:///C:/Users/Pratyush/AppData/Local/Temp/anonymous6223302453963115970webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5122)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Pratyush/AppData/Local/Temp/anonymous6223302453963115970webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="login()[pri:0, instance:frameWorkClass@75bd9247]" name="login" duration-ms="4583" started-at="2016-01-12T12:14:25Z" finished-at="2016-01-12T12:14:30Z">
+        <test-method status="SKIP" signature="T1()[pri:0, instance:frameWorkClass@7d417077]" name="T1" duration-ms="2" started-at="2016-01-19T11:53:06Z" finished-at="2016-01-19T11:53:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T1 -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:frameWorkClass@7d417077]" name="login" duration-ms="2" started-at="2016-01-19T11:53:06Z" finished-at="2016-01-19T11:53:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:frameWorkClass@75bd9247]" name="afterClass" is-config="true" duration-ms="1377" started-at="2016-01-12T12:14:30Z" finished-at="2016-01-12T12:14:31Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:frameWorkClass@7d417077]" name="afterClass" is-config="true" duration-ms="0" started-at="2016-01-19T11:53:06Z" finished-at="2016-01-19T11:53:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
