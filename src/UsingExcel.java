@@ -42,7 +42,7 @@ public class UsingExcel {
 		// Exercise - Read the departure and return date from excel and complete the code 
 		
 		// Set the test result in the Excel file
-		ExcelUtility.setCellData("Pass", 1, 5);
+		//ExcelUtility.setCellData("Pass", 1, 5);
 	}
 	
 	@AfterClass
