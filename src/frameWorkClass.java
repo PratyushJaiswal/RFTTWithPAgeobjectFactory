@@ -1,20 +1,27 @@
 
 import java.util.concurrent.TimeUnit;
+
 import utilities.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
 public class frameWorkClass {
 	private WebDriver driver;
-	private String baseUrl;
+	private String sTestCaseName;
+	 
+	private int iTestCaseRow;
+	//private String baseUrl;
 	loginPageFactory loginPage;
 	registerPageFactory1 registerPage;
-	@BeforeClass
-	public void beforeClass() {
+	@BeforeMethod
+	public void beforeMethod() {
 		driver = new FirefoxDriver();
 		//baseUrl = "https://testrtt.softwaydev.com/version_8/";
 		
@@ -27,23 +34,51 @@ public class frameWorkClass {
 		
 	}
 	
-	@Test
-	public void login(){
+	@Test(dataProvider = "Authentication")
+	public void login(String userName, String password){
 		
-		loginPage.insertUserName("daniel@yopmail.com");
-		loginPage.insertPassword("12345678");
+		loginPage.insertUserName(userName);
+		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
 		loginPage.clickLogout();
 	}
 	
-	@Test
-	public void T1(){
-		loginPage.insertUserName("daniel@yopmail.com");
-		loginPage.insertPassword("12345678");
+	@Test(dataProvider = "Authentication")
+	public void T1(String userName, String password){
+		loginPage.insertUserName(userName);
+		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
 		registerPage.clickCant_Find_Click_Here();
 		
 	}
+	
+	 @DataProvider
+	 
+	  public Object[][] Authentication() throws Exception{
+	 
+		    // Setting up the Test Data Excel file
+	 
+		 	ExcelUtility.setExcelFile(Constants.File_Path,"Sheet1");
+	 
+		 	sTestCaseName = this.toString();
+	 
+		  	// From above method we get long test case name including package and class name etc.
+	 
+		  	// The below method will refine your test case name, exactly the name use have used
+	 
+		  	sTestCaseName = ExcelUtility.getTestCaseName(this.toString());
+	 
+		    // Fetching the Test Case row number from the Test Data Sheet
+	 
+		    // Getting the Test Case name to get the TestCase row from the Test Data Excel sheet
+	 
+		 	iTestCaseRow = ExcelUtility.getRowContains(sTestCaseName,0);
+	 
+		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet1",iTestCaseRow);
+	 
+		    	return (testObjArray);
+	 
+			}
 	
 	@AfterClass
 	public void afterClass(){
