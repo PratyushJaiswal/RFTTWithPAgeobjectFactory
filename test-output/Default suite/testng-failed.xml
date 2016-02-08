@@ -10,9 +10,10 @@
     <classes>
       <class name="frameWorkClass">
         <methods>
-          <include name="login"/>
-          <include name="T1"/>
-          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="login" invocation-numbers="0"/>
+          <include name="T1" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
         </methods>
       </class> <!-- frameWorkClass -->
     </classes>

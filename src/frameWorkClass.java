@@ -36,7 +36,7 @@ public class frameWorkClass {
 	
 	@Test(dataProvider = "Authentication")
 	public void login(String userName, String password){
-		
+		System.out.println(userName);
 		loginPage.insertUserName(userName);
 		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
