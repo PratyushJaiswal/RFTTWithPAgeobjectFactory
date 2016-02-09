@@ -6,7 +6,6 @@ import utilities.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -62,16 +61,11 @@ public class frameWorkClass {
 	 
 		 	sTestCaseName = this.toString();
 	 
-		  	// From above method we get long test case name including package and class name etc.
-	 
-		  	// The below method will refine your test case name, exactly the name use have used
+		 
 	 
 		  	sTestCaseName = ExcelUtility.getTestCaseName(this.toString());
 	 
-		    // Fetching the Test Case row number from the Test Data Sheet
-	 
-		    // Getting the Test Case name to get the TestCase row from the Test Data Excel sheet
-	 
+		  
 		 	iTestCaseRow = ExcelUtility.getRowContains(sTestCaseName,0);
 	 
 		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet1",iTestCaseRow);
