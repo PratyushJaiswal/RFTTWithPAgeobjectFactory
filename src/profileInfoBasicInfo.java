@@ -1,7 +1,9 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class profileInfoBasicInfo {
@@ -141,13 +143,17 @@ public class profileInfoBasicInfo {
 		}
 		
 		//Dropdown Selection
-		public void insertDegree(String name){
-		Degree.sendKeys(name);
+		public void Degree(String dropdownText){
+			Select sel1 = new Select(Degree);
+			sel1.selectByVisibleText(dropdownText);
+			//Degree.sendKeys(name);
 		}
 		
 		//Dropdown Selection
 		public void insertYear(String name){
-		Year.sendKeys(name);
+			Select sel1 = new Select(Year);
+			sel1.selectByVisibleText(name);
+			//Year.sendKeys(name);
 		}
 		
 		public void insertAdditional_School(String name){
@@ -155,13 +161,17 @@ public class profileInfoBasicInfo {
 		}
 		
 		//Dropdown Selection
-		public void insertDegree_AS(String name){
-			Degree_AS.sendKeys(name);
+		public void selectDegree_AS(String name){
+			Select sel1 = new Select(Degree_AS);
+			sel1.selectByVisibleText(name);
+			//Degree_AS.sendKeys(name);
 		}
         
 		//Dropdown Selection
-		public void insertYear_Ad(String name){
-			Year_AS.sendKeys(name);
+		public void selectYear_Ad(String name){
+			Select sel1 = new Select(Year_AS);
+			sel1.selectByVisibleText(name);
+			//Year_AS.sendKeys(name);
 		}
         
 		//Dropdown Selection with checkbox
