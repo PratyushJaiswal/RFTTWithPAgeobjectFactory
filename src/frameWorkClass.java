@@ -19,6 +19,7 @@ public class frameWorkClass {
 	//private String baseUrl;
 	loginPageFactory loginPage;
 	registerPageFactory1 registerPage;
+	profileInfoBasicInfo profileinfo;
 	@BeforeMethod
 	public void beforeMethod() {
 		driver = new FirefoxDriver();
@@ -39,7 +40,9 @@ public class frameWorkClass {
 		loginPage.insertUserName(userName);
 		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
-		loginPage.clickLogout();
+		if (true){
+			loginPage.clickLogout();
+		}
 	}
 	
 	@Test(dataProvider = "Authentication")
