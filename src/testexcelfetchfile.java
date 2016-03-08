@@ -17,7 +17,7 @@ public class testexcelfetchfile {
 	
 	
 	public static void  tb2() throws Exception{
-		 Object[][] testObjArray = ExcelUtility.getTableArray("C://Users//Pratyush//git//RFTTWithPAgeobjectFactory//src//dataEngine//DataEngine.xlsx","Sheet1",2);
+		 Object[][] testObjArray = ExcelUtility.getTableArray("C://Users//Pratyush//git//RFTTWithPAgeobjectFactory//src//dataEngine//DataEngine.xlsx","Sheet2",19);
 		 String [][] str = (String[][]) testObjArray;
 		 System.out.println(str + "   my str");
 	}
@@ -30,7 +30,7 @@ public class testexcelfetchfile {
 	 
 		    // Setting up the Test Data Excel file
 	 
-		 	ExcelUtility.setExcelFile(Constants.File_Path,"Sheet1");
+		 	ExcelUtility.setExcelFile(Constants.File_Path,"Sheet2");
 	 
 		 	sTestCaseName = this.toString();
 	 
@@ -38,11 +38,11 @@ public class testexcelfetchfile {
 	 
 		  	sTestCaseName = ExcelUtility.getTestCaseName(this.toString());
 	 
-		  System.out.println(sTestCaseName + "coder");
+		  System.out.println(sTestCaseName + " coder");
 		 	iTestCaseRow = ExcelUtility.getRowContains(sTestCaseName,0);
 	 
 		 	System.out.println(iTestCaseRow);
-		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet1",iTestCaseRow);
+		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet2",iTestCaseRow);
 	 
 		    	return (testObjArray);
 	 
