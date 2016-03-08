@@ -26,8 +26,8 @@ public class UsingExcel {
 	@Test
 	public void testUsingExcel() throws Exception {
 		// Navigation and click the header to see the page
-		driver.get(Constants.URL);
-		driver.findElement(By.id("tab-flight-tab")).click();
+		//driver.get(Constants.URL);
+		//driver.findElement(By.id("tab-flight-tab")).click();
 		Thread.sleep(2000);
 		
 		// Tell the code about the location of Excel file
@@ -35,9 +35,11 @@ public class UsingExcel {
 		
 		String origin = ExcelUtility.getCellData(1, 1);
 		String destination = ExcelUtility.getCellData(1, 2);
+		
+		System.out.println(origin + "  $  " + destination);
 	
-		driver.findElement(By.id("flight-origin")).sendKeys(origin);
-		driver.findElement(By.id("flight-destination")).sendKeys(destination);
+		//driver.findElement(By.id("flight-origin")).sendKeys(origin);
+		//driver.findElement(By.id("flight-destination")).sendKeys(destination);
 		
 		// Exercise - Read the departure and return date from excel and complete the code 
 		
