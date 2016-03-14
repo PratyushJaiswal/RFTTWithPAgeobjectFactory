@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-
 import org.testng.annotations.DataProvider;
 
 import utilities.Constants;
@@ -34,18 +33,16 @@ public class NewTest {
 	}
 	@DataProvider 
 	public Object[][] excel() throws Exception {
-		Object[][] testObjArray= ExcelUtils.getTableArray(Constants.File_Path, "Sheet1");
-		return(testObjArray);
+		Object[][] testObjArray1= ExcelUtils.getTableArray(Constants.File_Path, "Sheet2");
+		return(testObjArray1);
 	}
+	
 	@Test(dataProvider = "excel")
-	public void login(String userName, String password)throws Exception{
-		System.out.println(userName);
+	public void mLogin (String userName, String password) throws Exception{
+		Thread.sleep(1000);
 		loginPage.insertUserName(userName);
 		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
-		if (true){
-			loginPage.clickLogout();
-		}
 	}
 	
 	
