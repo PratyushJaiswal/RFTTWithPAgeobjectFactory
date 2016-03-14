@@ -59,19 +59,16 @@ public class frameWorkClass {
 	  public Object[][] Authentication() throws Exception{
 	 
 		    // Setting up the Test Data Excel file
-	 
-		 	ExcelUtility.setExcelFile(Constants.File_Path,"Sheet1");
-	 
-		 	sTestCaseName = this.toString();
-	 
+		 ExcelUtility.setExcelFile(Constants.File_Path, "Sheet2");
+		 sTestCaseName = this.toString();
 		 
+		 sTestCaseName = ExcelUtility.getTestCaseName(this.toString());
+		 
+		 iTestCaseRow = ExcelUtility.getRowContains(sTestCaseName, 0);
+		 System.out.println(iTestCaseRow);
 	 
-		  	sTestCaseName = ExcelUtility.getTestCaseName(this.toString());
-	 
-		  
-		 	iTestCaseRow = ExcelUtility.getRowContains(sTestCaseName,0);
-	 
-		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet1",iTestCaseRow);
+		 	
+		    Object[][] testObjArray = ExcelUtility.getTableArray(Constants.File_Path,"Sheet2",iTestCaseRow);
 	 
 		    	return (testObjArray);
 		    	
