@@ -12,15 +12,19 @@ public class browserCommands {
 	}
 	
 	public void clickBack(){
-		
+		driver.navigate().back();
+	}
+	
+	public void clickForward(){
+		driver.navigate().forward();
 	}
 	
 	public void refresh(){
-		
+		driver.navigate().refresh();
 	}
 	
 	public void closeWindow(){
-		
+		driver.close();
 	}
 	
 
