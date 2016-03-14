@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
+import pageObjectRepository.loginPageFactory;
+import pageObjectRepository.profileInfoBasicInfo;
+import pageObjectRepository.registerPageFactory1;
 import utilities.Constants;
 import utilities.ExcelUtils;
 
