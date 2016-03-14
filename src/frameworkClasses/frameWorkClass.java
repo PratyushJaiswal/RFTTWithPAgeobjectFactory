@@ -22,6 +22,8 @@ public class frameWorkClass {
 	loginPageFactory loginPage;
 	registerPageFactory1 registerPage;
 	profileInfoBasicInfo profileinfo;
+	headerPageFactory headerpageFactory;
+	browserCommands browserCommands;
 	@BeforeMethod
 	public void beforeMethod() {
 		driver = new FirefoxDriver();
@@ -42,17 +44,19 @@ public class frameWorkClass {
 		loginPage.insertUserName(userName);
 		loginPage.insertPassword(password);
 		loginPage.clickLoginButton();
-		if (true){
-			loginPage.clickLogout();
-		}
+		
+	}
+	
+	
+	public void logout(){
+		loginPage.clickLogout();
 	}
 	
 	@Test(dataProvider = "Authentication")
-	public void T1(String userName, String password){
-		loginPage.insertUserName(userName);
-		loginPage.insertPassword(password);
-		loginPage.clickLoginButton();
-		registerPage.clickCant_Find_Click_Here();
+	public void navigation(String userName, String password){
+		login(userName,password);
+		browserCommands.refresh();
+	
 		
 	}
 	

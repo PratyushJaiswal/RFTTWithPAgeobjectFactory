@@ -1,0 +1,32 @@
+package pageObjectRepository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class headerPageFactory {
+////li[@id='notification_li']
+	WebDriver driver;
+	@FindBy(xpath = "//li[@id='notification_li']")
+	WebElement notificationtab;
+	
+	@FindBy(xpath = "//div[@id='myprofile_header']//div[@class='menu']//ul//li[3]")
+	WebElement My_Account;
+	
+	@FindBy(xpath = "//div[@id='myprofile_header']//div[@class='menu']//ul//li[4]")
+	WebDriver logout;
+	
+	public headerPageFactory(WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void notification(){
+		notificationtab.click();
+	}
+	
+	public void My_Account(){
+		My_Account.click();
+	}
+}
