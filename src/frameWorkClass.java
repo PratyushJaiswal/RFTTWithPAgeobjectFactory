@@ -56,6 +56,7 @@ public class frameWorkClass {
 		loginPage.clickLoginButton();
 		registerPage.clickCant_Find_Click_Here();
 		
+		
 	}
 	
 	 @DataProvider
