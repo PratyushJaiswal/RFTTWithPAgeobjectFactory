@@ -4,9 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 import utilities.*;
 import pageObjectRepository.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -47,18 +48,36 @@ public class frameWorkClass {
 		
 	}
 	
-	
+	public void login(){
+		loginPage.insertUserName("daniel@yopmail.com");
+		loginPage.insertPassword("12345678");
+		loginPage.clickLoginButton();
+	}
 	public void logout(){
 		loginPage.clickLogout();
 	}
 	
-	@Test(dataProvider = "Authentication")
-	public void navigation(String userName, String password){
-		login(userName,password);
-		browserCommands.refresh();
-	
+	@Test
+	public void navigationLoginPage() throws InterruptedException{
+		//login("daniel@yopmail.com","12345678");
+		//browserCommands.refresh();
+		login();
+		System.out.println("this is inside the message");
+		Thread.sleep(1000);
+		//headerpageFactory.notification();
+		headerpageFactory.My_Account();
+		browserCommands.clickBack();
+		headerpageFactory.logout();
+		login();
+		headerpageFactory.About_link();
+		browserCommands.clickBack();
+		headerpageFactory.Contact_us();
+		browserCommands.clickBack();
+		headerpageFactory.FAQ_link();
+		browserCommands.clickBack();
 		
 	}
+	
 	
 	 @DataProvider
 	 
@@ -80,7 +99,7 @@ public class frameWorkClass {
 		    	
 			}
 	
-	@AfterMethod
+	@AfterClass
 	public void afterClass(){
 		driver.quit();
 	}

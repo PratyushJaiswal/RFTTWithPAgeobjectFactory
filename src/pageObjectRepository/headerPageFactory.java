@@ -15,7 +15,16 @@ public class headerPageFactory {
 	WebElement My_Account;
 	
 	@FindBy(xpath = "//div[@id='myprofile_header']//div[@class='menu']//ul//li[4]")
-	WebDriver logout;
+	WebElement logout;
+	
+	@FindBy(linkText = "About")
+	WebElement About;
+	
+	@FindBy(linkText = "FAQ")
+	WebElement FAQ_link;
+	
+	@FindBy(linkText = "Contact Us")
+	WebElement Contact_Us_link;
 	
 	public headerPageFactory(WebDriver driver){
 		this.driver = driver;
@@ -28,5 +37,21 @@ public class headerPageFactory {
 	
 	public void My_Account(){
 		My_Account.click();
+	}
+	
+	public void About_link(){
+		About.click();
+	}
+	
+	public void FAQ_link(){
+		FAQ_link.click();
+	}
+	
+	public void Contact_us(){
+		Contact_Us_link.click();
+	}
+	
+	public void logout(){
+		logout.click();
 	}
 }
