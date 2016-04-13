@@ -1,12 +1,17 @@
 package pageObjectRepository;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
+
+
 public class loginPageFactory {
+	
+	static Logger log = Logger.getLogger(loginPageFactory.class);
 
 	WebDriver driver;
 	
@@ -22,7 +27,7 @@ public class loginPageFactory {
 	@FindBy(xpath = ".//*[@id='DoctorHeaderLoginForm']/div[2]/a")
 	WebElement Login_Forgot_Password;
 	
-	@FindBy(xpath = ".//*[@id='DoctorHeaderLoginForm']/a")
+	@FindBy(xpath = "//a[text()='Join']")
 	WebElement Login_Join_Button;
 	
 	@FindBy(xpath = ".//*[@id='popup_doctor_type']/div/div[1]/input")
@@ -44,26 +49,32 @@ public class loginPageFactory {
 	
 	public void insertUserName(String username){
 			Login_Email_Address.sendKeys(username);
+			log.info("username is set as " + username );
 	}
 	
 	public void insertPassword(String password){
 		Login_Password.sendKeys(password);
+		log.info("password entered is " + password );
 	}
 	
 	public void clickLoginButton(){
 		Login_Login_Button.click();
+		log.info("clicked on login button");
 	}
 	
 	public void clickForgotPassword(){
 		Login_Forgot_Password.click();
+		log.info("clicked on forgot button" );
 	}
 	
 	public void loginJoinButton() {
 		Login_Join_Button.click();
+		log.info("Join button found " );
 	}
 	
-	public void clickLoginGeneralDentistButton(String username){
+	public void clickLoginGeneralDentistButton(){
 		Login_GeneralDentist_Button.click();
+		log.info("general select button found ");
 	}
 	
 	public void clickLoginSpecialistButton() {
