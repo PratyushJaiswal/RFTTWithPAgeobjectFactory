@@ -50,7 +50,7 @@ public class RegisterationPageFramework {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PropertyConfigurator.configure("src/utilities/log4j.properties");
-		driver.get(Constants.URL);
+		
 		
 		
 	  }
